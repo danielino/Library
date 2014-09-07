@@ -1,0 +1,19 @@
+create group:
+	@return boolean
+	>>> Linux.group.create(groupname, gid = '')
+	
+delete group:
+	@return boolean
+	>>> Linux.group.delete(groupname)
+	
+search group:
+	@return boolean
+	>>> Linux.group.group_exists(groupname)
+
+find by gid:
+	@return list of dict
+	>>> Linux.group.find_by_gid(gid)
+	
+find by name:
+	@return list of dict
+	>>> Linux.group.find_by_name(groupname)

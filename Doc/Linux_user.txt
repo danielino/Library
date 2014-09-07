@@ -1,0 +1,30 @@
+create user:
+	>>> Linux.user.create(username, password, groups, home = "", shell="/bin/bash")
+	
+delete user:	
+	@return boolean
+	>>> Linux.user.delete(username)	
+	
+get all user:
+	@return list of str
+	>>> Linux.user.get_all_user()
+	['root', 'bin', 'daemon', 'adm' ..... ]
+	
+user exists:
+	@return boolean
+	>>> Linux.user.user_exists(username)
+	
+get user info:
+	@return dict
+	>>> Linux.user.get_user_info('root')
+	{ 	
+		'home': '/root', 
+		'shell': '/bin/bash', 
+		'gid': '0', 
+		'name': 'root', 
+		'uid': '0'
+	}
+	
+get user by uid:
+	@return dict
+	>>> Linux.user.find_by_uid(uid)

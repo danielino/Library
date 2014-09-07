@@ -1,0 +1,11 @@
+execute command:
+	@return list or boolean if command not exists
+	>>> Linux.console.run_command('date')
+	['lun 18 ago 2014, 06.03.04, CEST\n']
+	>>> 
+	
+	>>> a = Linux.console.run_command('asd')
+	sh: asd: command not found					<-- stdout message, doesn't apply to variable 
+	>>> print a
+	False
+	>>>

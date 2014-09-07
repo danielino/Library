@@ -1,0 +1,43 @@
+
+
+get pid
+	@return boolean or raise exception if pid not found
+	@param name accept int pid or str name  
+	
+	>>> Linux.process.get_pid('asd')
+	Traceback (most recent call last):
+	  	.....
+	    raise Exception("pid not found") 
+	Exception: pid not found
+	>>> Linux.process.get_pid('pmon')
+	4626
+	>>>
+	
+	
+	
+get status of pid from /proc filesystem:
+	@return dict or list of dict
+	raise exception if pid not found (call get_pid)
+	
+	>>> Linux.process.pgrep_get_status('pmon')
+	{
+		'VmExe': '241320 kB', 'CapBnd': 'ffffffffffffffff', 'Tgid': '4626', 'VmPTE': '548 kB', 'VmSize': '1082508 kB', 
+		'CapPrm': '0000000000000000', 'VmLib': '19732 kB', 'Cpus_allowed': '3', 'Utrace': '0',
+		.... 
+		'Uid': '500', 'Pid': '4626', 'Cpus_allowed_list': '0-1', 'TracerPid': '0', 'CapInh': '0000000000000000', 
+		'voluntary_ctxt_switches': '9137', 'VmRSS': '26028 kB', 'FDSize': '64'
+	}
+	>>> 
+	
+	
+	
+get list of file descriptor opened by process
+	>>> Linux.process.get_pid_fd_open('init')
+	{
+		'1': '/dev/null', 
+		'0': '/dev/null', 
+		'3': '/proc/1/fd/pipe:[8412]', 
+		'2': '/dev/null',
+		.... 
+	}
+	>>> 

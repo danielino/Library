@@ -1,0 +1,6 @@
+write file:
+	>>> Linux.IO.write_file(fileName, text)
+	
+open and read file:
+	>>> fp = Linux.IO.open_file(fileName, mode='r')
+	>>> res = Linux.IO.read_file(fp)			<-- fp.readlines()

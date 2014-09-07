@@ -1,0 +1,14 @@
+
+
+list all the package installed into system
+
+	@return list of dictionary  	
+	>>> Linux.RedHat.package.return_package_installed()
+	
+	
+	
+check if package is installed
+
+	@return boolean
+	>>> Linux.RedHat.package.is_installed(pkg_name)
+	

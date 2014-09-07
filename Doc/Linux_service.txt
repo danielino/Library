@@ -1,0 +1,19 @@
+start service:
+	@return boolean
+	>>> Linux.service.start(service_name)
+	
+stop service:
+	@return boolean
+	>>> Linux.service.stop(service_name)
+
+restart service:
+	@return boolean
+	>>> Linux.service.stop(service_name)
+		
+service status:
+	@return string
+	>>> Linux.service.status(service_name)
+	
+reload service:
+	@return boolean
+	>>> Linux.service.reload(service_name)
