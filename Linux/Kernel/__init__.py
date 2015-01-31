@@ -3,7 +3,7 @@ import Linux.console
 
 version = Linux.console.run_command('uname -r')
 
-def get_versions():
+def get_version():
     """ @return string version """
     return version
 
